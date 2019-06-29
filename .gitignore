@@ -1,0 +1,14 @@
+#忽略文件夹
+Objects/
+Listings/
+TestPro/
+
+#忽略文件类型
+*.lst
+*.m51
+*.__i
+*.htm
+*.lnp
+*.SBR
+*.uvgui*
+*.zip
