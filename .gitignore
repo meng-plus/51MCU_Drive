@@ -12,3 +12,6 @@ TestPro/
 *.SBR
 *.uvgui*
 *.zip
+
+#忽略Proteus过程文件
+*.pdsbak
