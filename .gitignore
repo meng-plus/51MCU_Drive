@@ -15,3 +15,4 @@ TestPro/
 
 #忽略Proteus过程文件
 *.pdsbak
+*.workspace
