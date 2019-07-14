@@ -12,7 +12,7 @@ TestPro/
 *.SBR
 *.uvgui*
 *.zip
-
+*.cache
 #忽略Proteus过程文件
 *.pdsbak
 *.workspace

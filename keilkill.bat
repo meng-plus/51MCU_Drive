@@ -25,4 +25,5 @@ del *.htm /s
 del *.sct /s
 del *.map /s
 del *.pdsbak /s
+del *.workspace /s #去除Proteus工作区
 exit
