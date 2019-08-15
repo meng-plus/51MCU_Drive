@@ -12,12 +12,19 @@ sbit Key7=P1^7;
 
 typedef struct
 {
-    unsigned char Value;
-    unsigned char State;
-    unsigned char lastValue;
+  unsigned char Value;
+  unsigned char State;
+  unsigned char lastValue;
 } KeyStruct;
-enum KeyState {CheckKey,DelayKey,KeyFallEdge,KeyDown,KeyRisEdge};
+typedef enum
+{
+  CheckKey,
+  DelayKey,
+  KeyFallEdge,
+  KeyDown,
+  KeyRisEdge
+} KeyState;
 
 //°´¼ü¼ì²â
-unsigned char key_scan(KeyStruct* KeyNum);
+KeyState key_scan(KeyStruct* KeyNum);
 #endif

@@ -4,6 +4,7 @@
 // Date: 2019-06-30
 //version: v1.0
 //Note: 仿真界面自己画吧
+// 对应演示视频 https://www.bilibili.com/video/av49045202/
 #include <REGX52.H>
 #include <stdio.h>
 #include "keyBoard.h"
@@ -13,15 +14,15 @@ void InitUART(void);//使用定时器1作为串口波特率发生器
 void main()
 {
     KeyStruct KeyNum;
-    unsigned char KeyState;
+    KeyState recKey;
     unsigned char str[32];
   InitUART();
     while(1)
     {
-        KeyState = key_scan(&KeyNum);//按键检测
-        if(KeyState==KeyFallEdge)
+        recKey = key_scan(&KeyNum);//按键检测
+        if(recKey==KeyFallEdge)
         {
-            sprintf(str,"KeyState:%d Keynum:%d \r\n ",(unsigned int)KeyState,(unsigned int)(KeyNum.Value));
+            sprintf(str,"KeyState:%d Keynum:%d \r\n ",(unsigned int)recKey,(unsigned int)(KeyNum.Value));
             printf(str);
           OutLED=KeyNum.Value;
         }

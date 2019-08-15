@@ -3,6 +3,7 @@
 // Author: chengmeng2018
 // Date: 2019-06-30
 //version: v1.0
+// 相关视频：https://www.bilibili.com/video/av49045202/
 
 #include <REGX52.H>
 #include <stdio.h>
@@ -13,15 +14,15 @@ void InitUART(void);//使用定时器1作为串口波特率发生器
 void main()
 {
     KeyStruct KeyNum;
-    unsigned char KeyState;
+   KeyState reckey;
     unsigned char str[32];
   InitUART();
     while(1)
     {
-        KeyState = key_scan(&KeyNum);//按键检测
-        if(KeyState==KeyFallEdge)
+        reckey = key_scan(&KeyNum);//按键检测
+        if(reckey==KeyFallEdge)
         {
-            sprintf(str,"KeyState:%d Keynum:%02X \r\n ",(unsigned int)KeyState,(unsigned int)(KeyNum.Value));
+            sprintf(str,"KeyState:%d Keynum:%02X \r\n ",(unsigned int)reckey,(unsigned int)(KeyNum.Value));
             printf(str);
           OutLED=KeyNum.Value;
         }

@@ -12,7 +12,7 @@ void delay2ms (void)  //ÑÓÊ±º¯Êý
 }
 
 
-unsigned char IndependentKeyboard()
+KeyState IndependentKeyboard()
 {
   unsigned char keyValue = 0xff;
   keyValue &= ~((!(char)Key0)<<0);
@@ -69,6 +69,7 @@ unsigned char key_scan (KeyStruct* KeyNum)
     break;
 
   default:
+    State = CheckKey;
     break;
   }
 
